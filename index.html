@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Fernanda Mosquera</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="icone.png">
+
+
+  <style>
+
+    :root {
+      --azul-marinho: #1b2b53; /* cor atualizada baseada na imagem */
+      --branco: #fff;
+      --cinza: #f4f6fa;
+      --destaque: #1b3a5d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--cinza);
+      color: var(--azul-marinho);
+      line-height: 1.6;
+    }
+
+    header, footer {
+      background: var(--azul-marinho);
+      color: var(--branco);
+      padding: 20px 0;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 60px;
+      height: auto;
+    }
+
+    .info-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.95rem;
+    }
+
+    .qrcode img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background: var(--branco);
+      padding: 5px;
+      box-shadow: 0 2px 8px rgba(16, 37, 66, 0.08);
+    }
+
+    main {
+      background: var(--branco);
+      margin: 40px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(16, 37, 66, 0.1);
+      padding: 40px;
+      max-width: 1300px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .foto-advogada {
+      width: 220px;
+      height: 220px;
+      border-radius: 10%;
+      object-fit: cover;
+      border: 6px solid var(--azul-marinho);
+      box-shadow: 0 2px 12px rgba(16, 37, 66, 0.1);
+    }
+
+    .info-advogada {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .info-advogada h1 {
+      color: var(--destaque);
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .info-advogada h2 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .info-advogada h3 {
+      color: var(--destaque);
+      font-size: 1.1rem;
+      margin-top: 1.5em;
+    }
+
+    .info-advogada p {
+      margin-top: 10px;
+      font-size: 1rem;
+      text-align: justify;
+    }
+
+    footer .info-contato span {
+      font-size: 0.9rem;
+    }
+
+    .logo img {
+      width: 250px; /* era 60px, agora dobrado */
+      height: auto;
+    }
+
+    /* Centraliza o logo no header */
+    .centraliza-logo {
+      justify-content: center !important;
+    }
+
+    header .logo img {
+      width: 400px;
+      max-width: 98vw;
+      height: auto;
+    }
+
+    .centraliza-logo {
+      justify-content: center !important;
+    }
+
+    header .logo img {
+      width: 400px;
+      max-width: 90vw;
+      height: auto;
+    }
+
+    .whatsapp-float {
+      width: 114px;
+      height: 114px;
+      bottom: 32px;
+      right: 32px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      position: fixed;
+      font-size: 0; /* Garante que não há espaço extra abaixo do ícone */
+    }
+
+    .whatsapp-float i {
+      font-size: 80px;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      background-color: #128c7e;
+    }
+
+    .problemas-section {
+      background: var(--branco);
+      margin: 40px auto;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(16, 37, 66, 0.1);
+      max-width: 1300px;
+      width: 90%;
+      padding: 40px 24px;
+    }
+
+    .problemas-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .problemas-titulo {
+      color: var(--destaque);
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .problemas-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .problema-card {
+      background: var(--azul-marinho);
+      color: var(--branco);           
+      border-radius: 24px;
+      box-shadow: 0 2px 12px rgba(16, 37, 66, 0.08);
+      width: 320px;
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 32px 16px 16px 16px;
+      gap: 18px;
+      font-size: 1.15rem;
+      color: var(--azul-marinho);
+      font-weight: 600;
+      transition: box-shadow 0.2s;
+    }
+
+    .problema-card:hover {
+      box-shadow: 0 6px 24px rgba(16, 37, 66, 0.16);
+    }
+
+    .problema-card span {
+      color: var(--branco);
+      text-align: center;
+      display: block;
+      width: 100%;
+      word-break: break-word;
+    }
+
+    .problema-img {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      margin-bottom: 8px;
+      border-radius: 12px;
+      background: var(--branco);
+      box-shadow: 0 2px 8px rgba(16, 37, 66, 0.08);
+      padding: 2px;            
+      border: 2px solid #e0e4ea; 
+    }
+
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        padding: 24px;
+      }
+
+      .foto-advogada {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+      }
+
+      .info-advogada h1 {
+        font-size: 1.4rem;
+        text-align: center;
+      }
+
+      .info-advogada h2 {
+        text-align: center;
+        font-size: 0.95rem;
+      }
+
+      .info-advogada p, .info-advogada h3 {
+        font-size: 0.95rem;
+      }
+
+      header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+
+      footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      footer .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      footer .logo img {
+        width: 120px;
+        max-width: 40vw;
+        height: auto;
+      }
+
+      footer .info-contato {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.95rem;
+        align-items: flex-start;
+      }
+
+      .logo {
+        justify-content: center;
+      }
+
+      header .logo img {
+        width: 250px;
+        max-width: 90vw;
+        height: auto;
+      }
+    }
+    @media (max-width: 1100px) {
+      .problemas-grid {
+        gap: 18px;
+      }
+      .problema-card {
+        width: 220px;
+        height: 180px;
+        font-size: 1rem;
+        padding: 20px 8px 8px 8px;
+      }
+      .problema-img {
+        width: 48px;
+        height: 48px;
+      }
+    .whatsapp-float {
+      width: 96px;
+      height: 96px;
+      bottom: 24px;
+      right: 24px;
+    }
+    .whatsapp-float i {
+      font-size: 64px;
+    }
+    .problema-card span {
+        font-size: 0.9rem;
+    }
+    }
+
+    @media (max-width: 768px) {
+      .problemas-section {
+        padding: 24px 8px;
+      }
+      .problemas-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .problema-card {
+        width: 90vw;
+        max-width: 320px;
+        height: 140px;
+        font-size: 0.95rem;
+        padding: 12px 6px 6px 6px;
+      }
+      .problema-img {
+        width: 36px;
+        height: 36px;
+      }
+      footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+      footer .logo {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      footer .logo img {
+        width: 180px;
+        max-width: 80vw;
+      }
+      footer .info-contato {
+        align-items: center;
+        font-size: 0.95rem;
+      }
+      .whatsapp-float {
+        width: 64px;
+        height: 64px;
+        bottom: 16px;
+        right: 16px;
+      }
+      .whatsapp-float i {
+        font-size: 38px;
+      }
+    }
+    @media (max-width: 480px) {
+      footer .logo img {
+        width: 120px;
+        max-width: 90vw;
+      }
+      .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        bottom: 8px;
+        right: 8px;
+      }
+      .whatsapp-float i {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container centraliza-logo">
+      <div class="logo">
+        <img src="imagens\sessao_cortada_2.jpg" alt="Logo Fernanda Mosquera" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <img class="foto-advogada" src="imagens\fernanda.jpg" alt="Foto da Advogada" />
+    <div class="info-advogada">
+      <h1>Dra. Fernanda Mosquera</h1>
+      <h2>OAB/SP 521.469 | Especialista em Direito de Família e Consumidor | Formada pela Universidade Presbiteriana Mackenzie</h2>
+
+      <h3>Qualificações</h3>
+
+      <p> A Dra. Fernanda Mosquera combina  conhecimento técnico com uma abordagem ética, empática e transparente, visando sempre os melhores resultados e a plena satisfação de seus clientes em cada caso. Para sua comodidade e agilidade, todo o atendimento é realizado de forma 100% online, permitindo que você acesse suporte jurídico de excelência de qualquer lugar do Brasil. Sua dedicação garante uma representação jurídica de excelência, onde quer que você esteja.</p>
+    </div>
+  </main>
+
+    <section class="problemas-section">
+    <div class="problemas-container">
+      <h2 class="problemas-titulo">PRINCIPAIS ÁREAS DE ATUAÇÃO</h2>
+      <div class="problemas-grid">
+        <div class="problema-card">
+          <img src="imagens\divorcio.jpg" alt="Divórcio" class="problema-img" />
+          <span>Divórcio</span>
+        </div>
+        <div class="problema-card">
+          <img src="imagens\pensao.jpg" alt="Pensão alimentícia" class="problema-img" />
+          <span>Pensão Alimentícia</span>
+        </div>
+        <div class="problema-card">
+          <img src="imagens\inventario.jpg" alt="Inventário" class="problema-img" />
+          <span>Inventário</span>
+        </div>
+      </div>
+      <div class="problemas-grid">
+        <div class="problema-card">
+          <img src="imagens\aeroporto.jpg" alt="Problemas no Aeroporto" class="problema-img" />
+          <span>Problemas no Aeroporto</span>
+        </div>
+        <div class="problema-card">
+          <img src="imagens\produto.jpg" alt="Produtos Defeituosos/Não Entregues" class="problema-img" />
+          <span>Produtos Defeituosos e/ou não Entregues</span>
+        </div>
+        <div class="problema-card">
+          <img src="imagens\contrato.jpg" alt="Contratos" class="problema-img" />
+          <span>Contratos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="logo">
+        <img src="imagens\sessao_cortada_2.jpg" alt="Logo Fernanda Mosquera" />
+        <div class="info-contato">
+            <span><i class="fa-solid fa-envelope"></i> fernandamadv@outlook.com</span>
+            <span><i class="fa-brands fa-whatsapp"></i> +55 (11) 98918-9045</span>
+            <span><i class="fa-solid fa-scale-balanced"></i> OAB/SP 521.469</span>
+        </div>
+    </div>
+    <div style="width:100%;text-align:center;margin-top:18px;font-size:0.95rem;opacity:0.7;">
+      © 2025 Dra. Fernanda Mosquera. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <a href="https://api.whatsapp.com/send/?phone=5511989189045&text=Olá,%20gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</body>
+</html>
