@@ -6,7 +6,7 @@
   <title>Dra. Fernanda Mosquera</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="icone.png">
+  <link rel="icon" type="image/png" href="imagens\icone.png">
 
 
   <style>
@@ -256,15 +256,13 @@
     }
 
     .problema-img {
-      width: 64px;
-      height: 64px;
+      width: 120px;
+      height: 120px;
       object-fit: contain;
       margin-bottom: 8px;
       border-radius: 12px;
-      background: var(--branco);
       box-shadow: 0 2px 8px rgba(16, 37, 66, 0.08);
       padding: 2px;            
-      border: 2px solid #e0e4ea; 
     }
 
     @media (max-width: 768px) {
@@ -338,31 +336,35 @@
       }
     }
     @media (max-width: 1100px) {
-      .problemas-grid {
-        gap: 18px;
+        .problemas-grid {
+          gap: 18px;
+        }
+        .problema-card {
+          width: 220px;
+          height: 180px;
+          font-size: 1rem;
+          padding: 20px 8px 8px 8px;
+        }
+        .problema-img {
+          width: 48px;
+          height: 48px;
+        }
+      .whatsapp-float {
+        width: 96px;
+        height: 96px;
+        bottom: 24px;
+        right: 24px;
       }
-      .problema-card {
-        width: 220px;
-        height: 180px;
-        font-size: 1rem;
-        padding: 20px 8px 8px 8px;
+      .whatsapp-float i {
+        font-size: 64px;
+      }
+      .problema-card span {
+          font-size: 0.9rem;
       }
       .problema-img {
-        width: 48px;
-        height: 48px;
+        width: 80px;
+        height: 80px;
       }
-    .whatsapp-float {
-      width: 96px;
-      height: 96px;
-      bottom: 24px;
-      right: 24px;
-    }
-    .whatsapp-float i {
-      font-size: 64px;
-    }
-    .problema-card span {
-        font-size: 0.9rem;
-    }
     }
 
     @media (max-width: 768px) {
@@ -413,6 +415,10 @@
       .whatsapp-float i {
         font-size: 38px;
       }
+      .problema-img {
+        width: 56px;
+        height: 56px;
+      }
     }
     @media (max-width: 480px) {
       footer .logo img {
@@ -457,29 +463,29 @@
       <h2 class="problemas-titulo">PRINCIPAIS ÁREAS DE ATUAÇÃO</h2>
       <div class="problemas-grid">
         <div class="problema-card">
-          <img src="imagens\divorcio.jpg" alt="Divórcio" class="problema-img" />
+          <img src="imagens\divorcio.png" alt="Divórcio" class="problema-img" />
           <span>Divórcio</span>
         </div>
         <div class="problema-card">
-          <img src="imagens\pensao.jpg" alt="Pensão alimentícia" class="problema-img" />
+          <img src="imagens\pensao.png" alt="Pensão alimentícia" class="problema-img" />
           <span>Pensão Alimentícia</span>
         </div>
         <div class="problema-card">
-          <img src="imagens\inventario.jpg" alt="Inventário" class="problema-img" />
+          <img src="imagens\inventario.png" alt="Inventário" class="problema-img" />
           <span>Inventário</span>
         </div>
       </div>
       <div class="problemas-grid">
         <div class="problema-card">
-          <img src="imagens\aeroporto.jpg" alt="Problemas no Aeroporto" class="problema-img" />
+          <img src="imagens\aeroporto.png" alt="Problemas no Aeroporto" class="problema-img" />
           <span>Problemas no Aeroporto</span>
         </div>
         <div class="problema-card">
-          <img src="imagens\produto.jpg" alt="Produtos Defeituosos/Não Entregues" class="problema-img" />
+          <img src="imagens\produto.png" alt="Produtos Defeituosos/Não Entregues" class="problema-img" />
           <span>Produtos Defeituosos e/ou não Entregues</span>
         </div>
         <div class="problema-card">
-          <img src="imagens\contrato.jpg" alt="Contratos" class="problema-img" />
+          <img src="imagens\contrato.png" alt="Contratos" class="problema-img" />
           <span>Contratos</span>
         </div>
       </div>
@@ -501,7 +507,7 @@
     </div>
   </footer>
 
-  <a href="https://api.whatsapp.com/send/?phone=5511989189045&text=Olá,%20gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank">
+  <a href="https://api.whatsapp.com/send/?phone=5511989189045&text=Olá,%20gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" alt ="Contado WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 </body>
