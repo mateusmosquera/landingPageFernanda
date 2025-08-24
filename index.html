@@ -1,514 +1,274 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Fernanda Mosquera</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="imagens\icone.png">
-
-
-  <style>
-
-    :root {
-      --azul-marinho: #1b2b53; /* cor atualizada baseada na imagem */
-      --branco: #fff;
-      --cinza: #f4f6fa;
-      --destaque: #1b3a5d;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--cinza);
-      color: var(--azul-marinho);
-      line-height: 1.6;
-    }
-
-    header, footer {
-      background: var(--azul-marinho);
-      color: var(--branco);
-      padding: 20px 0;
-    }
-
-    footer .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      width: 60px;
-      height: auto;
-    }
-
-    .info-contato {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 0.95rem;
-    }
-
-    .qrcode img {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      background: var(--branco);
-      padding: 5px;
-      box-shadow: 0 2px 8px rgba(16, 37, 66, 0.08);
-    }
-
-    main {
-      background: var(--branco);
-      margin: 40px auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(16, 37, 66, 0.1);
-      padding: 40px;
-      max-width: 1300px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .foto-advogada {
-      width: 220px;
-      height: 220px;
-      border-radius: 10%;
-      object-fit: cover;
-      border: 6px solid var(--azul-marinho);
-      box-shadow: 0 2px 12px rgba(16, 37, 66, 0.1);
-    }
-
-    .info-advogada {
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .info-advogada h1 {
-      color: var(--destaque);
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
-
-    .info-advogada h2 {
-      font-size: 1rem;
-      margin-bottom: 16px;
-      font-weight: 400;
-    }
-
-    .info-advogada h3 {
-      color: var(--destaque);
-      font-size: 1.1rem;
-      margin-top: 1.5em;
-    }
-
-    .info-advogada p {
-      margin-top: 10px;
-      font-size: 1rem;
-      text-align: justify;
-    }
-
-    footer .info-contato span {
-      font-size: 0.9rem;
-    }
-
-    .logo img {
-      width: 250px; /* era 60px, agora dobrado */
-      height: auto;
-    }
-
-    /* Centraliza o logo no header */
-    .centraliza-logo {
-      justify-content: center !important;
-    }
-
-    header .logo img {
-      width: 400px;
-      max-width: 98vw;
-      height: auto;
-    }
-
-    .centraliza-logo {
-      justify-content: center !important;
-    }
-
-    header .logo img {
-      width: 400px;
-      max-width: 90vw;
-      height: auto;
-    }
-
-    .whatsapp-float {
-      width: 114px;
-      height: 114px;
-      bottom: 32px;
-      right: 32px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.3s ease;
-      position: fixed;
-      font-size: 0; /* Garante que não há espaço extra abaixo do ícone */
-    }
-
-    .whatsapp-float i {
-      font-size: 80px;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      background-color: #128c7e;
-    }
-
-    .problemas-section {
-      background: var(--branco);
-      margin: 40px auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(16, 37, 66, 0.1);
-      max-width: 1300px;
-      width: 90%;
-      padding: 40px 24px;
-    }
-
-    .problemas-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .problemas-titulo {
-      color: var(--destaque);
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    .problemas-grid {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-
-    .problema-card {
-      background: var(--azul-marinho);
-      color: var(--branco);           
-      border-radius: 24px;
-      box-shadow: 0 2px 12px rgba(16, 37, 66, 0.08);
-      width: 320px;
-      height: 260px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 32px 16px 16px 16px;
-      gap: 18px;
-      font-size: 1.15rem;
-      color: var(--azul-marinho);
-      font-weight: 600;
-      transition: box-shadow 0.2s;
-    }
-
-    .problema-card:hover {
-      box-shadow: 0 6px 24px rgba(16, 37, 66, 0.16);
-    }
-
-    .problema-card span {
-      color: var(--branco);
-      text-align: center;
-      display: block;
-      width: 100%;
-      word-break: break-word;
-    }
-
-    .problema-img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin-bottom: 8px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(16, 37, 66, 0.08);
-      padding: 2px;            
-    }
-
-    @media (max-width: 768px) {
-      main {
-        flex-direction: column;
-        padding: 24px;
-      }
-
-      .foto-advogada {
-        width: 140px;
-        height: 140px;
-        margin: 0 auto;
-      }
-
-      .info-advogada h1 {
-        font-size: 1.4rem;
-        text-align: center;
-      }
-
-      .info-advogada h2 {
-        text-align: center;
-        font-size: 0.95rem;
-      }
-
-      .info-advogada p, .info-advogada h3 {
-        font-size: 0.95rem;
-      }
-
-      header .container {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-      }
-
-      footer .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 16px;
-      }
-
-      footer .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      footer .logo img {
-        width: 120px;
-        max-width: 40vw;
-        height: auto;
-      }
-
-      footer .info-contato {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        font-size: 0.95rem;
-        align-items: flex-start;
-      }
-
-      .logo {
-        justify-content: center;
-      }
-
-      header .logo img {
-        width: 250px;
-        max-width: 90vw;
-        height: auto;
-      }
-    }
-    @media (max-width: 1100px) {
-        .problemas-grid {
-          gap: 18px;
-        }
-        .problema-card {
-          width: 220px;
-          height: 180px;
-          font-size: 1rem;
-          padding: 20px 8px 8px 8px;
-        }
-        .problema-img {
-          width: 48px;
-          height: 48px;
-        }
-      .whatsapp-float {
-        width: 96px;
-        height: 96px;
-        bottom: 24px;
-        right: 24px;
-      }
-      .whatsapp-float i {
-        font-size: 64px;
-      }
-      .problema-card span {
-          font-size: 0.9rem;
-      }
-      .problema-img {
-        width: 80px;
-        height: 80px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .problemas-section {
-        padding: 24px 8px;
-      }
-      .problemas-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
-      .problema-card {
-        width: 90vw;
-        max-width: 320px;
-        height: 140px;
-        font-size: 0.95rem;
-        padding: 12px 6px 6px 6px;
-      }
-      .problema-img {
-        width: 36px;
-        height: 36px;
-      }
-      footer .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 10px;
-      }
-      footer .logo {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-      }
-      footer .logo img {
-        width: 180px;
-        max-width: 80vw;
-      }
-      footer .info-contato {
-        align-items: center;
-        font-size: 0.95rem;
-      }
-      .whatsapp-float {
-        width: 64px;
-        height: 64px;
-        bottom: 16px;
-        right: 16px;
-      }
-      .whatsapp-float i {
-        font-size: 38px;
-      }
-      .problema-img {
-        width: 56px;
-        height: 56px;
-      }
-    }
-    @media (max-width: 480px) {
-      footer .logo img {
-        width: 120px;
-        max-width: 90vw;
-      }
-      .whatsapp-float {
-        width: 48px;
-        height: 48px;
-        bottom: 8px;
-        right: 8px;
-      }
-      .whatsapp-float i {
-        font-size: 26px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dra. Fernanda Mosquera</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="imagens\icone.png">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <header>
-    <div class="container centraliza-logo">
-      <div class="logo">
-        <img src="imagens\sessao_cortada_2.jpg" alt="Logo Fernanda Mosquera" />
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <img class="foto-advogada" src="imagens\fernanda.jpg" alt="Foto da Advogada" />
-    <div class="info-advogada">
-      <h1>Dra. Fernanda Mosquera</h1>
-      <h2>OAB/SP 521.469 | Especialista em Direito de Família e Consumidor | Formada pela Universidade Presbiteriana Mackenzie</h2>
-
-      <h3>Qualificações</h3>
-
-      <p> A Dra. Fernanda Mosquera combina  conhecimento técnico com uma abordagem ética, empática e transparente, visando sempre os melhores resultados e a plena satisfação de seus clientes em cada caso. Para sua comodidade e agilidade, todo o atendimento é realizado de forma 100% online, permitindo que você acesse suporte jurídico de excelência de qualquer lugar do Brasil. Sua dedicação garante uma representação jurídica de excelência, onde quer que você esteja.</p>
-    </div>
-  </main>
-
-    <section class="problemas-section">
-    <div class="problemas-container">
-      <h2 class="problemas-titulo">PRINCIPAIS ÁREAS DE ATUAÇÃO</h2>
-      <div class="problemas-grid">
-        <div class="problema-card">
-          <img src="imagens\divorcio.png" alt="Divórcio" class="problema-img" />
-          <span>Divórcio</span>
-        </div>
-        <div class="problema-card">
-          <img src="imagens\pensao.png" alt="Pensão alimentícia" class="problema-img" />
-          <span>Pensão Alimentícia</span>
-        </div>
-        <div class="problema-card">
-          <img src="imagens\inventario.png" alt="Inventário" class="problema-img" />
-          <span>Inventário</span>
-        </div>
-      </div>
-      <div class="problemas-grid">
-        <div class="problema-card">
-          <img src="imagens\aeroporto.png" alt="Problemas no Aeroporto" class="problema-img" />
-          <span>Problemas no Aeroporto</span>
-        </div>
-        <div class="problema-card">
-          <img src="imagens\produto.png" alt="Produtos Defeituosos/Não Entregues" class="problema-img" />
-          <span>Produtos Defeituosos e/ou não Entregues</span>
-        </div>
-        <div class="problema-card">
-          <img src="imagens\contrato.png" alt="Contratos" class="problema-img" />
-          <span>Contratos</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="logo">
-        <img src="imagens\sessao_cortada_2.jpg" alt="Logo Fernanda Mosquera" />
-        <div class="info-contato">
-            <span><i class="fa-solid fa-envelope"></i> fernandamadv@outlook.com</span>
-            <span><i class="fa-brands fa-whatsapp"></i> +55 (11) 98918-9045</span>
-            <span><i class="fa-solid fa-scale-balanced"></i> OAB/SP 521.469</span>
+<header>
+    <div>
+        <div class="header__logo center">
+            <img class="header_logo__img" src="imagens\sessao_cortada_5.jpg" alt="Logo Fernanda Mosquera"/>
         </div>
     </div>
-    <div style="width:100%;text-align:center;margin-top:18px;font-size:0.95rem;opacity:0.7;">
-      © 2025 Dra. Fernanda Mosquera. Todos os direitos reservados.
-    </div>
-  </footer>
+</header>
+<main>
+    <section class="section__apresentacao">
+        <div class="center flex-center-column">
+            <div class="apresentacao__img">
+                <img src="imagens\fernanda.jpg" alt="Foto da Fernanda"/>
+            </div>
+            <div>
+                <h1 class="titulo">Dra. Fernanda Mosquera</h1>
+            </div>
+            <div class="apresentacao__dados">
+                <p>OAB/SP 521.469</p>
+                <p>Especialista em Direito de Família e Consumidor</p>
+                <p>Formada pela Universidade Presbiteriana Mackenzie</p>
+            </div>
 
-  <a href="https://api.whatsapp.com/send/?phone=5511989189045&text=Olá,%20gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" alt ="Contado WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+            <div class="apresentacao__btn">
+                <a class="flex-center-row"
+                   href="https://api.whatsapp.com/send/?phone=5511989189045&text=Olá,%20gostaria%20de%20mais%20informações."
+                   target="_blank">
+                    Enviar mensagem
+                    <img src="imagens\whatsapp-logo.png" alt="WhatsApp"/>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section__qualificacoes">
+        <div class="card">
+            <h2 class="titulo">Qualificações</h2>
+            <br>
+            <p> Combina conhecimento técnico com uma <strong>abordagem ética, empática e
+                transparente</strong>, visando sempre os melhores resultados e a plena satisfação de seus clientes em
+                cada caso.</p>
+            <br/>
+            <p> Para sua comodidade e agilidade, <strong>todo o atendimento é realizado de forma 100%
+                online</strong>, permitindo que você acesse suporte jurídico de excelência de qualquer lugar do
+                Brasil. Sua dedicação garante uma representação jurídica de excelência, onde quer que você esteja.</p>
+        </div>
+    </section>
+
+    <section class="section__areas-atuacao">
+        <div class="card">
+            <h2 class="titulo">Principais áreas de atuação</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="imagens\divorcio.png" alt="Divórcio"/>
+                    Divórcio
+                </div>
+                <div class="grid-item">
+                    <img src="imagens\pensao.png" alt="Pensão alimentícia"/>
+                    Pensão Alimentícia
+                </div>
+                <div class="grid-item">
+                    <img src="imagens\inventario.png" alt="Inventário"/>
+                    Inventário
+                </div>
+                <div class="grid-item">
+                    <img src="imagens\aeroporto.png" alt="Problemas no Aeroporto"/>
+                    Problemas no Aeroporto
+                </div>
+                <div class="grid-item">
+                    <img src="imagens\produto.png" alt="Produtos Defeituosos/Não Entregues"/>
+                    Produtos Defeituosos e/ou não Entregues
+                </div>
+                <div class="grid-item">
+                    <img src="imagens\contrato.png" alt="Contratos"/>
+                    Contratos
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__faq">
+        <div class="card">
+            <h1>Perguntas Frequentes</h1>
+            <div class="faq">
+                <details>
+                    <summary>Como funciona o processo de divórcio?</summary>
+                    <div class="faq-content">
+
+                        <p>O divórcio pode ser realizado de duas formas:</p>
+                        <p><b>• Extrajudicial:</b> Realizado em Cartório de Notas via escritura pública, aplicável
+                            quando há
+                            consenso entre os cônjuges, inexistência de filhos menores ou incapazes, e ausência de
+                            gravidez. A
+                            assistência de um advogado é indispensável.</p>
+                        <p><b>• Judicial:</b> É a via obrigatória quando há disputa entre as partes (divórcio
+                            litigioso), ou quando
+                            há filhos menores ou incapazes, ou gravidez, mesmo que haja consenso. Neste caso, o acordo é
+                            homologado
+                            judicialmente.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>É possível revisar o valor da pensão alimentícia?</summary>
+                    <div class="faq-content">
+
+                        <p>Sim. O valor da pensão alimentícia pode ser revisado judicialmente.</p>
+                        <p>Para que isso ocorra, é imprescindível demonstrar uma alteração substancial no binômio
+                            necessidade-possibilidade. Isso significa que, seja para majorar, minorar ou exonerar a
+                            obrigação,
+                            deve-se comprovar uma modificação significativa na situação financeira do alimentante (quem
+                            paga) ou do
+                            alimentado (quem recebe) desde que a pensão foi originalmente fixada.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>O que é inventário e qual sua obrigatoriedade?</summary>
+                    <div class="faq-content">
+
+                        <p>O inventário é o processo legal que tem como objetivo levantar e descrever todos os bens,
+                            direitos e
+                            dívidas (patrimônio ativo e passivo) deixados por uma pessoa falecida, conhecido como
+                            espólio.</p>
+                        <p>Após essa apuração, ocorre a partilha dos bens entre os herdeiros e legatários.</p>
+                        <p>Sua obrigatoriedade reside na necessidade de formalizar a transmissão da propriedade do
+                            falecido para
+                            seus sucessores, garantindo a regularidade jurídica. A lei determina que o processo de
+                            inventário deve
+                            ser iniciado em até 60 (sessenta) dias a contar da data do óbito. O descumprimento desse
+                            prazo pode
+                            acarretar a incidência de multa fiscal sobre o ITCMD (Imposto sobre Transmissão Causa Mortis
+                            e Doação).</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>O que ocorre se houver dívidas deixadas pelo falecido?</summary>
+                    <div class="faq-content">
+
+                        <p>As dívidas deixadas pelo falecido são quitadas com os bens que compõem o espólio.</p>
+                        <p>A responsabilidade dos herdeiros é limitada às forças da herança; eles não respondem com seu
+                            patrimônio
+                            pessoal pelas dívidas do falecido. Excepcionalmente, a responsabilização pessoal dos
+                            herdeiros pode
+                            ocorrer em casos comprovados de má-fé, sonegação de bens ou fraude.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>É possível anular um contrato após sua assinatura?</summary>
+                    <div class="faq-content">
+
+                        <p>Sim, você pode anular um contrato depois de assinado, mas apenas em situações bem específicas
+                            onde a
+                            validade jurídica dele foi comprometida.</p>
+                        <p>Isso geralmente acontece por vícios do consentimento ou vícios sociais, que significam que
+                            sua vontade
+                            não foi expressa de forma livre e consciente ou que o contrato foi feito para prejudicar
+                            terceiros. Os
+                            principais motivos incluem erro substancial (falsa percepção), dolo (indução maliciosa),
+                            coação (ameaça
+                            ou pressão), estado de perigo (obrigação onerosa para evitar dano grave), lesão
+                            (desproporção
+                            aproveitando-se de inexperiência/necessidade) e fraude contra credores (alienação para
+                            evitar dívidas).</p>
+                        <p>Para anular um contrato, você precisará entrar com uma ação judicial e conseguir comprovar o
+                            vício
+                            alegado.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>O que fazer em caso de negativação indevida do nome?</summary>
+                    <div class="faq-content">
+
+                        <p>Em caso de inscrição indevida em cadastros de inadimplentes (SPC, SERASA), o consumidor tem
+                            direito
+                            à imediata exclusão do registro.</p>
+                        <p>Além disso, a jurisprudência consolidada entende que a negativação indevida configura dano
+                            moral in re
+                            ipsa (presumido), dispensando a comprovação do prejuízo, e confere ao consumidor o direito
+                            de pleitear
+                            indenização por danos morais contra o responsável pela inclusão. Recomenda-se a notificação
+                            extrajudicial para a imediata exclusão e, caso não resolvida, o ajuizamento de ação
+                            judicial.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>O serviço de atendimento jurídico é integralmente online?</summary>
+                    <div class="faq-content">
+
+                        <p>Sim, nosso serviço de atendimento jurídico é integralmente digital.</p>
+                        <p>Garantindo segurança jurídica, confidencialidade dos dados e praticidade para o cliente. A
+                            comunicação e
+                            os procedimentos são realizados por plataformas digitais seguras, assegurando a integridade
+                            das
+                            informações e o sigilo profissional em todas as etapas, desde a consulta inicial até o
+                            acompanhamento
+                            processual.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Quais são as etapas para a prestação do serviço jurídico online?</summary>
+                    <div class="faq-content">
+
+                        <p>O fluxo de atendimento é estruturado nas seguintes fases:</p>
+                        <p><b>• Análise Preliminar:</b> É realizada uma triagem básica do caso para avaliar a
+                            viabilidade e a
+                            pertinência jurídica.</p>
+                        <p><b>• Agendamento de Consulta Personalizada:</b> Consulta aprofundada via videoconferência,
+                            onde são
+                            discutidos os detalhes do caso, os direitos aplicáveis e as estratégias processuais.</p>
+                        <p><b>• Envio de Documentos:</b> Documentação pertinente é encaminhada de forma digitalizada e
+                            segura, via
+                            e-mail ou plataformas de compartilhamento criptografadas.</p>
+                        <p><b>• Contratação e Acompanhamento:</b> Formalização da prestação de serviços por contrato
+                            digital,
+                            acompanhamento do caso com orientações e atualizações periódicas.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>É possível submeter documentos em formato digital?</summary>
+                    <div class="faq-content">
+
+                        <p>Sim. Todos os documentos necessários para a análise e condução do caso podem ser enviados em
+                            formato
+                            digital.</p>
+                        <p>Seja por e-mail ou diretamente via WhatsApp. A segurança e o sigilo profissional são
+                            garantidos por meio
+                            de protocolos de segurança de dados e a observância rigorosa da legislação de proteção de
+                            dados.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+</main>
+<footer>
+    <div>
+        <div class="footer__logo">
+            <div class="footer__items flex-center-row">
+                <div>
+                    <img class="footer_logo__img" src="imagens\sessao_cortada_5.jpg" alt="Logo Fernanda Mosquera"/>
+                </div>
+                <div class="info-contato">
+                    <span><i class="fa-solid fa-envelope"></i> fernandamadv@outlook.com</span>
+                    <span><i class="fa-brands fa-whatsapp"></i> +55 (11) 98918-9045</span>
+                    <span><i class="fa-solid fa-scale-balanced"></i> OAB/SP 521.469</span>
+                </div>
+            </div>
+
+            <div class="copyright">
+                © 2025 Dra. Fernanda Mosquera. Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
