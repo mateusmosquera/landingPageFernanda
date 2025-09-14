@@ -168,33 +168,39 @@ body {
 }
 
 .faq summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     font-weight: bold;
-    list-style: none;
     color: var(--azul-marinho);
-    padding: 0.5rem 0;
-    transition: color 0.2s ease;
+    list-style: none;
+    padding: 0.7rem 0;
+    font-size: 1rem;
+    position: relative;
 }
+
 
 .faq summary:hover {
     color: var(--destaque);
 }
 
 .faq summary::-webkit-details-marker {
-    display: none; /* remove o triângulo padrão */
+    display: none;
 }
 
 .faq summary::after {
-    content: "+";
-    float: right;
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     font-size: 1.2rem;
     transition: all 0.3s ease;
+    transform: translateY(-50%) rotate(0deg);
     color: var(--azul-marinho);
     transform-origin: center;
 }
 
-.faq details[open] summary::after {
-    content: "–";
+.faq details[open] summary .icon {
     transform: rotate(180deg);
 }
 
@@ -207,7 +213,7 @@ body {
 }
 
 .faq details[open] .faq-content {
-    max-height: 500px; /* ajuste conforme necessário */
+    max-height: none;
     opacity: 1;
     padding-top: 1rem;
 }
@@ -226,7 +232,6 @@ body {
 }
 
 .faq summary::after {
-    content: "+";
     float: right;
     font-size: 1.2rem;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -236,8 +241,7 @@ body {
 }
 
 .faq details[open] summary::after {
-    content: "–";
-    transform: rotate(90deg) scale(1.1);
+    transform: rotate(180deg) scale(1.1);
 }
 
 .faq details[open] {
@@ -256,6 +260,10 @@ body {
     flex-direction: column;
     gap: 0.7%;
     font-size: 100%;
+}
+
+.info-contato span {
+    color: var(--branco) !important;
 }
 
 .copyright {
